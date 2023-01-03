@@ -6,11 +6,14 @@ module.exports = {
     node: true,
     mocha: true,
   },
+  plugins: ['prettier'],
   extends: 'eslint:recommended',
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  rules: {},
+  rules: {
+    'prettier/prettier': 'error',
+  },
 };
