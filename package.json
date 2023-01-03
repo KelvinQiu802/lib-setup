@@ -1,0 +1,42 @@
+{
+  "name": "clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "sideEffects": false,
+  "scripts": {
+    "build:cjs": "rollup -c config/rollup.config.js",
+    "build:esm": "rollup -c config/rollup.config.esm.js",
+    "build:aio": "rollup -c config/rollup.config.aio.js",
+    "build": "rm -rf dist && npm run build:cjs && npm run build:esm && npm run build:aio",
+    "test": "cross-env NODE_ENV=test nyc mocha",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.20.7",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/register": "^7.18.9",
+    "@babel/runtime-corejs2": "^7.20.7",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.2.1",
+    "@types/node": "^18.11.18",
+    "babel-plugin-istanbul": "^6.1.1",
+    "core-js": "^3.27.1",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.2",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.8.1",
+    "rollup": "^3.9.0"
+  },
+  "dependencies": {
+    "expect.js": "^0.3.1"
+  }
+}
